@@ -17,32 +17,6 @@ const addReview = async (req, res) => {
   }
 };
 
-// // Modifier un avis
-// const updateReview = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const { userId, rating, comment } = req.body;
-
-//     const review = await Review.findById(id);
-//     if (!review) {
-//       return res.status(404).json({ message: 'Review not found' });
-//     }
-
-//     // Vérifier si l'utilisateur est le propriétaire de l'avis
-//     if (review.userId !== userId) {
-//       return res.status(403).json({ message: 'You can only update your own review' });
-//     }
-
-//     review.rating = rating || review.rating;
-//     review.comment = comment || review.comment;
-//     await review.save();
-
-//     res.status(200).json({ message: 'Review updated', review });
-//   } catch (error) {
-//     res.status(500).json({ message: 'Error updating review', error });
-//   }
-// };
-
 // Supprimer un avis
 const deleteReview = async (req, res) => {
   try {
