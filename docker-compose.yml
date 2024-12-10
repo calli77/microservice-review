@@ -6,12 +6,6 @@ services:
       - "3556:3556"
     environment:
       NODE_ENV: production
+      MONGO_URI: ${MONGO_URI}  # L'URI MongoDB depuis le fichier .env
     volumes:
       - .:/app
-    depends_on:
-      - db
-
-  db:
-    image: mongo
-    ports:
-      - "27017:27017"
